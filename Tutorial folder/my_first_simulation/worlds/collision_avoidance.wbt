@@ -1,0 +1,126 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.38731819454166755 -0.32308478798568063 0.8634818098542846 4.39001580061191
+  position 0.15567433032267747 1.209101337021823 1.3004965211582202
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+WoodenBox {
+  hidden linearVelocity_0 -2.4526703471991088e-17 -3.9189194121906205e-17 -1.5987211554602278e-16
+  hidden angularVelocity_0 6.661338147750931e-16 -9.992007221626415e-16 -1.7343021799833036e-16
+  translation 0.25324 -0.350072 0.049960760000000014
+  rotation 8.800734896824666e-12 -2.555074457511943e-12 1 4.692820413947861e-06
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+E-puck {
+  hidden position_0_0 37.82797990856843
+  hidden position_0_1 39.51512863485948
+  hidden linearVelocity_0 0.05925966880766231 0.020494646879265655 9.14032127023077e-08
+  hidden angularVelocity_0 0.002100955577383615 -0.006074865243242922 -1.8989874104318992e-09
+  hidden translation_1 0 0.026000000000000013 0.02
+  hidden rotation_1 0 1 0 0.12886806549091193
+  hidden linearVelocity_1 0.059229321359949946 0.0204840672341535 -4.967664725153392e-10
+  hidden angularVelocity_1 -1.024207123967895 2.9614648102530308 4.854735434654525e-08
+  hidden translation_2 0 -0.02600000000000002 0.02
+  hidden rotation_2 0 1 0 1.8160167917819605
+  hidden linearVelocity_2 0.05922926917861541 0.02048421750765672 -2.5404764964649965e-10
+  hidden angularVelocity_2 -1.0242071431847612 2.9614648035986 -4.5709727595602254e-08
+  translation -0.03722381603850933 -0.3831507183940618 -3.1909825878827236e-05
+  rotation 0.001339064165467898 -0.00796872686062059 0.9999673526167651 0.3329789453561577
+  controller "epuck_avoid_collision"
+}
+WoodenBox {
+  translation 0.380074 0.352704 0.05
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.367243 0.192508 0.05
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+Solid {
+  translation -0.11459358080962695 -0.13630982059829153 0.04958907968091044
+  rotation -0.662043022667773 0.6821440823127293 0.3104488478036967 0.39969663349259577
+  children [
+    Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+  linearVelocity 0 0 1.9221429504507698e-16
+}
+Solid {
+  translation -0.000923805 -0.495205 0.05
+  children [
+    Shape {
+      appearance DEF WALL1 PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "C:/Users/MSI GF63/Downloads/red_brick_wall.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 1 0.01 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+Solid {
+  translation -0.000923805 0.494795 0.05
+  children [
+    Shape {
+      appearance USE WALL1
+      geometry Box {
+        size 1 0.01 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+}
+Solid {
+  translation 0.499074 -0.00520304 0.05
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance USE WALL1
+      geometry Box {
+        size 1 0.01 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation -0.500926 -0.00520696 0.05
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance USE WALL1
+      geometry Box {
+        size 1 0.01 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+}
